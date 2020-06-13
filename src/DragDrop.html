@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag And Drop</title>
+    <style>
+        #div1, #div2{
+            height: 200px;
+            width: 200px;
+            float: left;
+            padding: 20px;
+            margin: 10px;
+            border:2px solid black;
+            }
+    </style>
+</head>
+<body>
+    <img id="img1" src = "Media/DSC03058.JPG"  width="150px" height="150px" draggable="true" ondragstart="drag(event)">
+    <br> <br>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <script>
+        var x = document.getElementById("div1");
+        function drag(event){
+            event.dataTransfer.setData("text", event.target.id);
+        }
+        function drop(event){
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+
+        function allowDrop(event){
+            event.preventDefault();
+        }
+    </script>
+</body>
+</html>

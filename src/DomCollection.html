@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Hello Manaswini !!</p>
+        <p>Believe In Your Dreams</p>
+        <p>The Universe will bring them to you.</p>
+    </div>
+    <button onclick="fun()">Click to change color</button>
+    <script>
+        function fun(){
+            var x = document.getElementsByTagName("p");
+            var l = x.length;
+            for (let i =0; i < l; i++){
+              x[i] = x[i].style.color = "blue";
+            }
+        }
+    </script>
+</body>
+</html>

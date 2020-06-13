@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="p1">Demo for JQuery</p>
+    <p id="p2">By Manaswini</p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <script>
+        $(document).ready(function(){
+            var x = $("#p3");
+            x.text("Hello !");
+            var y = $("#p1");
+            var yText = y.text();
+            $("#p4").text(yText);
+            $("#p4").html("<p>Hellloooooooo</p>");
+            $("#p4").html(yText);
+        
+        });
+    </script>
+</body>
+</html>

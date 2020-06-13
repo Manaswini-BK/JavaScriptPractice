@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id = "fid" action = "action.html">
+        First Name:<input type = "text" id ="fnid" value=""><br>
+        Last Name:<input type = "text" id ="lnid" value=""><br>
+        <input type ="submit" value = "Submit"> 
+    </form>
+    <p>Click Submit to submit the form. If you want to see your entries please press the 'Verify' button below</p>
+    <button onclick = "verify()">Verify</button>
+    <p id = "pid"></p>
+    <script>
+        function verify(){
+            var x = document.forms['fid'];
+            var text = "";
+            for(let i=0;i<x.length;i++){
+                text+= x[i].value + "<br>";
+            }
+            document.getElementById("pid").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

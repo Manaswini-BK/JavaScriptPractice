@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        @keyframes animationForDiv{
+            0% {background-color: crimson; left: 0;top: 0;}
+            25% {background-color: darkgoldenrod;left: 300px;top: 0;}
+            50% {background-color: darkolivegreen;left: 300px;top: 200px;}
+            75% {background-color: darkturquoise;left: 0;top: 200px;}
+            100% {background-color: hotpink;left: 0;top: 0;}
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: cornflowerblue;
+            animation-name: animationForDiv;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            /* animation-direction: alternate; */
+        }
+    </style>
+</head>
+<body>
+    <div class = "div1"></div>
+</body>
+</html>

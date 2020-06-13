@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">This is 1st para</p>
+        <p id="p2">This must be 2nd para but one p is inserted</p>
+        <p id="p3">This uses insertBefore</p>
+    </div>
+    <script>
+        var p = document.createElement("p");
+        var text = document.createTextNode("This is 2nd para which is inserted");
+        p.appendChild(text);
+        var ele = document.getElementById("div1");
+        //ele.appendChild(p);
+        //alert(document.body.innerHTML);
+        var p3 = document.getElementById("p3");
+        //ele.insertBefore(p3,p);
+        //ele.removeChild(document.getElementById("p2"));
+        ele.replaceChild(p,p3);
+    </script>
+</body>
+</html>

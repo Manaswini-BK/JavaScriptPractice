@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getLocation()">Find Your Location</button>
+    <p id="loc"></p>
+    <script>
+        var x = document.getElementById("loc");
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }
+            else{
+                x.innerHTML = "GeoLocation is not supported";
+            }
+        }
+
+        function showPosition(position){
+            x.innerHTML = "Latitude: "+ position.coords.latitude + "<br>" + "Longitude: " + position.coords.longitude;
+        }
+
+        function showError(error){
+            if(error.PERMISSION_DENIED){
+                x.innerHTML = "User denied permission to access !!"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Alert will display in 3s if u dont want it click Cancel before 3s</p>
+    <button onclick=" myTE = setTimeout(fun,3000)">Click for alert</button>
+    <button onclick="clearTimeout(myTE)">Click to cancel</button>
+    <br><br><br>
+    <p id="pid"></p>
+    <button onclick="clearInterval(interval)">Stop Timer</button>
+    <script>
+        function fun(){
+            alert("This is displayed after 3s");
+        }
+        var interval = setInterval(myInterval,1000);
+        function myInterval(){
+            var d = new Date();
+            document.getElementById("pid").innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>

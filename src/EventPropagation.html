@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1, #div2{
+            background-color: darkolivegreen;
+            padding: 50px;
+        }
+        #p1, #p2{
+            background-color: khaki;
+            font-size: 20px;
+            border: 2px dashed red;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <div id = "div1">
+        <p id="p1">Click me to see Bubbling</p>
+    </div>
+    <div id = "div2">
+        <p id="p2">Click me to see Capturing</p>
+    </div>
+    </div>
+    <script>
+        var h = document.getElementById("h1");
+        document.getElementById("p1").addEventListener("click",function(){
+            alert("You clicked para");
+        },false);
+
+        document.getElementById("div1").addEventListener("click",function(){
+            alert("You clicked div");
+        },false);
+
+        document.getElementById("p2").addEventListener("click",function(){
+            alert("You clicked para");
+        },true);
+        document.getElementById("div2").addEventListener("click",function(){
+            alert("You clicked div");
+        },true);
+    </script>
+</body>
+</html>

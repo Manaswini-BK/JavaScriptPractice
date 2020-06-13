@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body onload="startWorker()">
+  <div>
+    <p>Name</p>
+    <input type="text" id="name">
+    <p>Mobile</p>
+    <input type="tel" id="mobile"> <br> <br>
+    <button onclick="showdetails()">Submit</button>
+  </div>
+  <div>
+      <p id="det"></p>
+      <p id="p1"></p>
+      <p id="p2"></p>
+      <p id ="timeTaken"></p>
+  </div>
+  <script>
+      var w;
+      var timeTaken = 0;
+      function startWorker(){
+        if(typeof(Worker)  !== "undefined"){
+            if(typeof(w) === "undefined"){
+                w = new Worker("WebWorker.js");
+            }
+            w.onmessage = function(event){
+            timeTaken += event.data;
+          }
+        }
+        else{
+            document.getElementById("timeTaken").innerHTML = "Workers are not supported !!"
+        }
+      }
+      function showdetails(){
+        document.getElementById("det").innerHTML = "Details are:"
+        document.getElementById("p1").innerHTML = document.getElementById("name").value;
+        document.getElementById("p2").innerHTML = document.getElementById("mobile").value;
+        stopWorker();
+      }
+      function stopWorker(){
+        document.getElementById("timeTaken").innerHTML = "Time taken to complete the action: " + timeTaken +" seconds"; 
+          w.terminate();
+          w = undefined;
+      }
+    </script>
+</body>
+</html>
